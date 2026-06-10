@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Panou Instructor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container" style="width:90%;">
+
+    <h1>Rezervări elevi</h1>
+
+    <a href="/logout">
+        <button style="background:red;">Logout</button>
+    </a>
+
+    <table border="1" style="width:100%; margin-top:20px; border-collapse:collapse;">
+
+        <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Telefon</th>
+            <th>Data</th>
+            <th>Ora</th>
+            <th>Acțiune</th>
+        </tr>
+
+        {% for b in bookings %}
+
+        <tr>
+            <td>{{ b.nume }}</td>
+            <td>{{ b.prenume }}</td>
+            <td>{{ b.telefon }}</td>
+            <td>{{ b.data }}</td>
+            <td>{{ b.ora }}</td>
+            <td>
+                <a href="/delete/{{ b.row }}">
+                    <button style="background:#d9534f;">Șterge</button>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

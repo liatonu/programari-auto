@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Programări școală auto</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Programare lecție auto</h1>
+
+    <form action="/book" method="POST">
+
+        <input type="text" name="nume" placeholder="Nume" required>
+        <input type="text" name="prenume" placeholder="Prenume" required>
+        <input type="text" name="telefon" placeholder="Telefon" required>
+
+        <label>Data:</label>
+        <input type="date" id="datePicker" name="data" required>
+
+        <label>Ore disponibile:</label>
+        <div id="hours"></div>
+
+        <input type="hidden" name="ora" id="selectedHour">
+
+        <button type="submit">Rezervă</button>
+
+    </form>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
